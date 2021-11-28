@@ -175,12 +175,39 @@ class _MyhomeState extends State<Myhome> {
               ),
               SizedBox(height: 20,),
 
-              ListTile(
-                title: Text("Privacy Policy",style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 20
-                ),),
-                trailing: Icon(Icons.privacy_tip_outlined,size: 50,color: Colors.green,),
+              GestureDetector(
+                onTap: (){
+                  showDialog(
+                      context: context,
+                      builder: (context){
+                        return AlertDialog(
+                          title: Text("Are you sure you want to exit?"),
+                          content: Text("The app doesn't collect any user personal data as,\n for example, name, picture or location.\n· Consequently, the app doesn't share \n any personal information with any other entity or \n third parties We allow third-party companies to \n serve ads and collect certain anonymous \ninformation when you visit our app. These companies may use \n anonymous information such as \nyour Google Advertising ID, your device type and \nversion, browsing activity, location and other \ntechnical data relating to your device, in order to provide advertisements."),
+                          actions: [
+                            FlatButton(
+                              onPressed: (){
+                                Navigator.pop(context);
+                              },
+                              child: Text("No"),
+                            ),
+                            FlatButton(
+                              onPressed: (){
+                               // exit(0);
+                              },
+                              child: Text("Yes"),
+                            ),
+                          ],
+                        );
+                      }
+                  );
+                },
+                child: ListTile(
+                  title: Text("Privacy Policy",style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 20
+                  ),),
+                  trailing: Icon(Icons.privacy_tip_outlined,size: 50,color: Colors.green,),
+                ),
               ),
 
 
