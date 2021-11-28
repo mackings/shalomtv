@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shalom_tv/grace.dart';
+import 'package:shalom_tv/livetv.dart';
+import 'package:shalom_tv/partner.dart';
+import 'package:shalom_tv/shalomaffrica.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -61,7 +64,8 @@ class _MyhomeState extends State<Myhome> {
             Center(child: SvgPicture.asset("assets/place.svg",height: 250, width: 250,color: Colors.green,)),
             GestureDetector(
               onTap: (){
-                _livestream();
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Livetv()));
+                //_livestream();
               },
               child: Container(
                 height: 70,
@@ -130,12 +134,17 @@ class _MyhomeState extends State<Myhome> {
               ),
               SizedBox(height: 20,),
 
-              ListTile(
-                title: Text("Partner with Shalom TV",style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 20
-                ),),
-                trailing: Icon(Icons.workspaces_filled,size: 50,color: Colors.red,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Partner()));
+                },
+                child: ListTile(
+                  title: Text("Partner with Shalom TV",style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 20
+                  ),),
+                  trailing: Icon(Icons.workspaces_filled,size: 50,color: Colors.red,),
+                ),
               ),
               SizedBox(height: 20,),
 
@@ -149,6 +158,19 @@ class _MyhomeState extends State<Myhome> {
                       fontSize: 20
                   ),),
                   trailing: Icon(Icons.person_pin_sharp,size: 50,color: Colors.black,),
+                ),
+              ),
+              SizedBox(height: 20,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ShalomAfrica()));
+                },
+                child: ListTile(
+                  title: Text("Shalom Africa",style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 20
+                  ),),
+                  trailing: Icon(Icons.tv,size: 50,color: Colors.red,),
                 ),
               ),
               SizedBox(height: 20,),
