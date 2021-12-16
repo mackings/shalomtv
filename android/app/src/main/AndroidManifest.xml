@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shalom_tv">
+    package="myapp.example.shalom_tv">
    <application
         android:label="shalom_tv"
         android:icon="@mipmap/shalomlogo">
