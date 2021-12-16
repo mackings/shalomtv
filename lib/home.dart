@@ -178,6 +178,7 @@ class _MyhomeState extends State<Myhome> {
               GestureDetector(
                 onTap: (){
                   showDialog(
+                    
                       context: context,
                       builder: (context){
                         return AlertDialog(
